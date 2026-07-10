@@ -1,5 +1,5 @@
 import requests
-from app.config import OLLAMA_URL, OLLAMA_MODEL
+from core.config import OLLAMA_URL, OLLAMA_MODEL
 
 
 def ask(prompt: str) -> str:
