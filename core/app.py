@@ -1,4 +1,4 @@
-from app.extractors.invoice import extract_invoice
+from core.extractors.invoice import extract_invoice
 
 if __name__ == "__main__":
 

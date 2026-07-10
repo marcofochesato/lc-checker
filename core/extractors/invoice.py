@@ -1,11 +1,11 @@
 import json
 import re
-from app.ollama_client import ask
+from core.ollama_client import ask
 
 
 def extract_invoice(text: str):
 
-    with open("app/prompts/invoice.txt") as f:
+    with open("core/prompts/invoice.txt") as f:
         prompt = f.read()
 
     prompt = prompt.replace("{{TEXT}}", text)
