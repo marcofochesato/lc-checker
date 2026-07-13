@@ -10,12 +10,14 @@ def check_documents(
     awb,
     insurance
 ):
-
-    prompt = DOCUMENT_CHECK_PROMPT.format(
-        lc=lc,
-        invoice=invoice,
-        awb=awb,
-        insurance=insurance
+    prompt = DOCUMENT_CHECK_PROMPT.replace(
+        "{lc}", lc
+    ).replace(
+        "{invoice}", invoice
+    ).replace(
+        "{awb}", awb
+    ).replace(
+        "{insurance}", insurance
     )
 
     response = ask(prompt)
