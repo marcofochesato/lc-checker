@@ -6,8 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.append(str(ROOT))
 
-from agents.lc.document_checker.checker import check_documents
-
+from agents.lc.document_checker.checker import analyze_lc, analyze_lc
 
 st.set_page_config(
     page_title="LC Document Checker",
@@ -50,12 +49,14 @@ if st.button("CHECK DOCUMENTS"):
     else:
         with st.spinner("Analisi documenti in corso..."):
 
-            result = check_documents(
-                lc_text,
-                invoice_text,
-                awb_text,
-                insurance_text
-            )
+            # result = check_documents(
+            #     lc_text,
+            #     invoice_text,
+            #     awb_text,
+            #     insurance_text
+            # )
+
+            result = analyze_lc(lc_text)
 
         st.subheader("Risultato")
 
